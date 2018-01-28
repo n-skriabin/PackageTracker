@@ -22,6 +22,7 @@ namespace PackageTracker
         List<string> dstIps = new List<string>();
         public delegate void InvokeDelegate();
         bool detectedOnce = false;
+        ToolTip tt;
 
         public Form1()
         {
@@ -199,6 +200,12 @@ namespace PackageTracker
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             button2.Enabled = true;
+        }
+
+        private void textBox1_MouseHover(object sender, EventArgs e)
+        {
+            tt = new ToolTip();
+            tt.Show("Select the package for more information about it.", textBox1);
         }
     }
 }
