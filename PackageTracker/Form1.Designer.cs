@@ -116,6 +116,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(461, 103);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -138,9 +139,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(256, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Id for search:";
+            this.label4.Text = "IP for search:";
             // 
             // timer1
             // 

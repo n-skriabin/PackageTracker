@@ -73,7 +73,7 @@ namespace PackageTracker
                 return;
             }
             int deviceSelected = listBox1.FindString(listBox1.SelectedItem.ToString());
-            textBox2.Clear();
+            //textBox2.Clear();
             PacketArrivalEventHandler emptyHandler = null;
             // выбираем первое устройство в спсике (для примера)
             ICaptureDevice captureDevice = deviceList[deviceSelected];
@@ -104,7 +104,7 @@ namespace PackageTracker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            textBox1.ScrollBars = ScrollBars.Vertical;
         }
 
         void Program_OnPacketArrival(object sender, CaptureEventArgs e)
@@ -150,6 +150,7 @@ namespace PackageTracker
                 {
                     //listBox2.Items.Add("Отправитель - " + srcIp + "; Адресат - " + dstIp + ";");
                     packagesInfo += "Отправитель - " + srcIp + "; Адресат - " + dstIp + ";" + " Порт: " + port + ";" + Environment.NewLine;
+                    detectedOnce = true;
                 }
             }
         }
@@ -164,7 +165,7 @@ namespace PackageTracker
 
         public void InvokeMethodResult()
         {
-            if (!detected)
+            if (!detectedOnce)
             {
                 MessageBox.Show("Suspicious devices are not detected.", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -185,6 +186,11 @@ namespace PackageTracker
                 button3.Enabled = true;
                 timer1.Stop();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
