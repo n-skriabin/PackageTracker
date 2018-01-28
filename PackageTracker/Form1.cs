@@ -149,7 +149,6 @@ namespace PackageTracker
                 if (detected)
                 {
                     //listBox2.Items.Add("Отправитель - " + srcIp + "; Адресат - " + dstIp + ";");
-                    textBox1.BackColor = Color.Red;
                     packagesInfo += "Отправитель - " + srcIp + "; Адресат - " + dstIp + ";" + " Порт: " + port + ";" + Environment.NewLine;
                 }
             }

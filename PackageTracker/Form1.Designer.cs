@@ -67,6 +67,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(259, 117);
+            this.progressBar1.Maximum = 300;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(214, 34);
             this.progressBar1.TabIndex = 2;
