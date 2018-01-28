@@ -57,6 +57,7 @@ namespace PackageTracker
 
         private void button2_Click(object sender, EventArgs e)
         {
+            textBox2.ReadOnly = true;
             detectedOnce = false;
             label5.Text = "Scanning...";
             button1.Enabled = false;
@@ -83,7 +84,8 @@ namespace PackageTracker
             // открываем в режиме promiscuous, поддерживается также нормальный режим
             captureDevice.Open(DeviceMode.Promiscuous, 1000);
             // начинаем захват пакетов
-            (new Thread(delegate () {
+            (new Thread(delegate ()
+            {
                 packagesInfo = String.Empty;
                 captureDevice.StartCapture();
                 Thread.Sleep(30200);
@@ -180,6 +182,7 @@ namespace PackageTracker
             }
             else
             {
+                textBox2.ReadOnly = false;
                 label5.Text = String.Empty;
                 progressBar1.Value = 0;
                 button1.Enabled = true;
@@ -191,6 +194,11 @@ namespace PackageTracker
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
         }
     }
 }
